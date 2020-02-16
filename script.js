@@ -14,10 +14,34 @@ $(".closedEye > a > img").on("mouseout", function() {
     .css("display", "none");
 });
 
-$(".locale > img").on("mouseover", function() {
-  $(this).attr("src", "img/icons/eye-black-open.png");
+$(".locale").on("mouseover", function() {
+  $("#blackEye > img").attr("src", "img/icons/eye-black-open.png");
+  $(".dots").css("visibility", "visible");
+  $(".single-dot").css("visibility", "visible");
 });
 
-$(".locale > img").on("mouseout", function() {
-  $(this).attr("src", "img/icons/eye-black-closed.png");
+$(".locale").on("mouseout", function() {
+  $("#blackEye > img").attr("src", "img/icons/eye-black-closed.png");
+  $(".dots").css("visibility", "hidden");
+  $(".single-dot").css("visibility", "hidden");
+});
+
+$(".dot").on("mouseout", function() {
+  $(this)
+    .find(".single-dot")
+    .css("opacity", "1");
+
+  $(this)
+    .find("img")
+    .css("opacity", "0");
+});
+
+$(".dot").on("mouseover", function() {
+  $(this)
+    .find(".single-dot")
+    .css("opacity", "0");
+
+  $(this)
+    .find("img")
+    .css("opacity", "1");
 });

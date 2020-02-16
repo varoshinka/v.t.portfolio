@@ -23,11 +23,6 @@ header {
   text-align: center;
 }
 
-.locale {
-  grid-area: locale;
-  padding: 10px 0px;
-}
-
 h2 > a {
   text-decoration: none;
   color: white;
@@ -44,6 +39,65 @@ header > a {
 header > a:hover {
   color: black;
   font-weight: bolder;
+}
+
+.locale {
+  grid-area: locale;
+  padding: 10px 0px;
+}
+
+#blackEye {
+  margin: 0px auto;
+}
+
+#blackEye > img {
+  width: 50px;
+  height: 50px;
+
+  margin: 0px auto;
+  display: block;
+}
+
+.dots {
+  padding-top: 10px;
+  visibility: hidden;
+}
+
+.dot {
+  width: 32%;
+  display: inline-block;
+  min-height: 80px;
+}
+
+.single-dot:hover {
+  opacity: 0;
+}
+
+.dot > a {
+  display: block;
+  width: 100%;
+  margin: 0px auto;
+  text-align: center;
+}
+
+.dot > a > img {
+  width: 35px;
+  height: 60px;
+  opacity: 0;
+}
+
+.dot > a > img:hover {
+  opacity: 1;
+}
+
+#en,
+#ru,
+#bg {
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 50%;
+  margin: 0px auto;
 }
 
 main {
@@ -67,6 +121,9 @@ aside {
 .closedEye {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    ". blackEye ."
+    "dots dots dots";
 }
 
 .closedEye > a {
@@ -76,8 +133,7 @@ aside {
   height: 50px;
 }
 
-.closedEye > a > img,
-.locale > img {
+.closedEye > a > img {
   width: 50px;
   height: 50px;
 }
